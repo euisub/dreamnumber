@@ -183,7 +183,7 @@ h1 {
   padding: 46px 390px 56px 390px;
   object-fit: contain;
   border: solid 2px #dddcdc;
-  background-color: #f7f7f7;	
+  background-color: #2c6c9b;	
 }
 
 .but:hover{
@@ -413,6 +413,18 @@ h1 {
 }
 
 /* 반자동 설정버튼 끝*/
+.text3{
+  width: 200px;
+  height: 43px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 44px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: center;
+  color: white;
+}
+
 .text2{
   width: 200px;
   height: 43px;
@@ -702,6 +714,8 @@ input::placeholder {
 	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
 	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
 }
+
+
 
 @media screen and (max-width: 700px) {
 
