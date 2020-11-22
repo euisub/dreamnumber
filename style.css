@@ -1,0 +1,714 @@
+body {
+	object-fit: contain;
+	background: #f3f5fa;
+	color: #f3f5fa;
+	text-align: center;
+}
+a {
+	color: #ccc;
+} /*-------------------------------------*/
+.form-wrapper-dark-cf .cf:before,
+.form-wrapper-dark-cf .cf:after {
+	content: '';
+	display: table;
+}
+.form-wrapper-dark-cf .cf:after {
+	clear: both;
+}
+.form-wrapper-dark-cf .cf {
+	zoom: 1;
+}
+
+/*-------------------------------------*/
+.byline p {
+	text-align: center;
+	color: #c6c6c6;
+	font: bold 18px Arial, Helvetica, Sans-serif;
+	text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+.byline p a {
+	color: #d83c3c;
+	text-decoration: none;
+}
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 900;
+	margin-bottom: 12px;
+	margin-top: 0;
+}
+.box {
+	width: 40%;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 35px;
+	border: 2px solid #fff;
+	border-radius: 20px/50px;
+	background-clip: padding-box;
+	text-align: center;
+}
+.button {
+	font-size: 1em;
+	padding: 10px;
+	color: #fff;
+	border: 2px solid #06d85f;
+	border-radius: 20px/50px;
+	text-decoration: none;
+	cursor: pointer;
+	/* transition: all 0.3s ease-out; */
+}
+.button:hover {
+	background: #06d85f;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	/* transition: opacity 1ms; */
+	visibility: hidden;
+	opacity: 0;
+}
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+.popup {
+	margin: 0px auto;
+	padding: 0px;
+	background: #fff;
+	border-radius: 5px;
+	width: 100%;
+	position: relative;
+	/* transition: all 5s ease-in-out; */
+}
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+.popup p {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+.popup .closs {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	/* transition: all 1ms; */
+	font-size: 80px;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+.popup .closs:hover {
+	color: #06d85f;
+}
+.popup .content {
+	max-height: 30%;
+	overflow: auto;
+}
+.title_name {
+  width: 500px;
+  margin: 79px 120px 32px 49px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 48.5px;
+  line-height: 1.43;
+  letter-spacing: -2.83px;
+  text-align: left;
+  color: #000000;
+}
+
+.tabT{
+	width: 980px;
+	margin:0 auto;
+}
+.tablinks {
+	width: 327px;
+	height: 155px;
+	margin: 0px 0px 15px 0px;
+	padding: 43px 58px 48px 48px;
+	object-fit: contain;
+	border: solid 2px #dddcdc;
+	background-color: #2c6c9b;
+}
+
+
+/* 꿈해몽 하단 버튼 시작 */
+
+.but1{
+  width: 490px;
+  height: 155px;
+  margin: 0px 0px 32px 0px;
+  
+  padding: 46px 147px 56px 147px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+  background-color: #f7f7f7;	
+}
+
+.but1:hover{
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+.but2{
+  width: 490px;
+  height: 155px;
+  margin: 0px 0px 32px 0px;
+  padding: 46px 147px 56px 147px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+  background-color: #f7f7f7;	
+}
+
+.but2:hover{
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+/* 꿈해몽 하단 버튼 끝 */
+
+/* 자동 하단 버튼 시작 */
+.but{
+  width: 100%;
+  height: 155px;
+  margin: 0 auto;
+  
+  padding: 46px 390px 56px 390px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+  background-color: #f7f7f7;	
+}
+
+.but:hover{
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+.but_1{
+  width: 326px;
+  height: 155px;
+  margin: 0px 0px 32px 0px;
+  padding: 46px 63px 56px 63px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+  background-color: #f7f7f7;	
+}
+
+.but_1:hover{
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+.but_2{
+  width: 326px;
+  height: 155px;
+  margin: 0px 0px 32px 0px;
+  padding: 46px 63px 56px 63px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+  background-color: #f7f7f7;	
+}
+
+.but_2:hover{
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+.but_3{
+  width: 326px;
+  height: 155px;
+  margin: 0px 0px 32px 0px;
+  padding: 46px 63px 56px 63px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+  background-color: #f7f7f7;	
+}
+
+.but_3:hover{
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+/* 자동 하단 버튼 끝 */
+
+/* 반자동 설정버튼 시작*/
+
+.sbot1,.sbot2,.sbot3,.sbot4{
+  width: 243px;
+  height: 96px;
+  margin: 0 auto;
+  padding: 15px 20px 18px 19px;
+  object-fit: contain;
+  border-radius: 28.5px;
+  background-color: #5e7bc1;
+  border:none;
+}
+
+.sbot1:hover{
+	background: white;
+    border: 3px solid blueviolet;
+	background-color: #ae85f9;
+    color: blueviolet;
+}
+
+.sbot1_2{
+  width: 243px;
+  height: 96px;
+  margin: 0 auto;
+  padding: 15px 20px 18px 19px;
+  object-fit: contain;
+  border-radius: 28.5px;
+  background-color: #ae85f9;
+  border:none;
+}
+
+.sbot2:hover{
+	background: white;
+    border: 3px solid blueviolet;
+	background-color: #edc51f;
+    color: blueviolet;
+}
+
+.sbot2_2{
+  width: 243px;
+  height: 96px;
+  margin: 0 auto;
+  padding: 15px 20px 18px 19px;
+  object-fit: contain;
+  border-radius: 28.5px;
+  background-color: #edc51f;
+  border:none;
+}
+
+.sbot3:hover{
+	background: white;
+    border: 3px solid blueviolet;
+	background-color: #ee8e4c;
+    color: blueviolet;
+}
+
+.sbot3_2{
+  width: 243px;
+  height: 96px;
+  margin: 0 auto;
+  padding: 15px 20px 18px 19px;
+  object-fit: contain;
+  border-radius: 28.5px;
+  background-color: #ee8e4c;
+  border:none;
+}
+
+.sbot4:hover{
+	background: white;
+    border: 3px solid blueviolet;
+	background-color: #5e7bc1;
+    color: blueviolet;
+}
+
+
+.sbotText{
+  width: 243px;
+  height: 96px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 40px;
+  line-height: 1.44;
+  letter-spacing: -1.6px;
+  text-align: center;
+  color: #f7f7f7;
+}
+
+.btnCot {
+    width: 980px;
+	height: 155px;
+    padding: 0.5em;
+    font-weight: 600;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid #dddcdc;
+    color: black;
+	font-size: 32px;
+	text-align:center;
+}
+
+.btnCot:hover {
+    background: white;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+.pop4Text{
+  width: 503px;
+  height: 55px;
+  margin: 4px 106px 32px 49px;
+  font-family: NanumSquareB;
+  font-size: 56.5px;
+  line-height: 1.43;
+  letter-spacing: -2.83px;
+  text-align: left;
+  color: #000000;	
+}
+
+.numBtn{
+  width: 102px;
+  height: 108px;
+  margin: 0px 10px 0;
+  object-fit: contain;
+  
+}
+.numBtn_x{
+  width: 102px;
+  height: 108px;
+  margin: 0px 10px 0;
+  object-fit: contain;
+  background-color: red;
+}
+.numBtn_f{
+  width: 102px;
+  height: 108px;
+  margin: 0px 10px 0;
+  object-fit: contain;
+  background-color: yellow;
+}
+
+.numBtn_boder{
+	border: none;
+	background-color: #f3f5fa;
+}
+
+.s_Releace{
+  width: 204px;
+  height: 108px;
+  margin: 10px 18px 10px 10px;
+  font-size:28.5px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+  background-color: #f7f7f7;
+  float:right;
+  
+  font-family: NanumSquareB;
+  font-size: 44px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: center;
+  color: #b3b2b2;
+  
+}
+
+.s_Releace:hover{
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: #b3b2b2;
+}
+
+/* 반자동 설정버튼 끝*/
+.text2{
+  width: 200px;
+  height: 43px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 44px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: center;
+  color: #b3b2b2;
+}
+
+
+input::placeholder { 
+  object-fit: contain;
+  font-family: NanumSquareR;
+  font-size: 38px;
+  line-height: 1.44;
+  letter-spacing: -1.8px;
+  text-align: left;
+  color: #b3b2b2;	
+}
+
+#ff {
+  width: 114px;
+  height: 43px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 44px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: center;
+  color: #B8B8B8;
+}
+
+#chff{
+  width: 285px;
+  height: 43px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 44px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: center;
+}
+
+#chff_2{
+  width: 285px;
+  height: 43px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 40px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: center;
+}
+
+
+.search{
+  width: 860px;
+  height: 122px;
+  margin: 0px 0 8px 0px;
+  padding: 40px 26px 40px 20px;
+  object-fit: contain;
+  border: solid 2px #2c6c9b;
+  background-color: #f7f7f7;
+  float: left;
+	
+  font-family: NanumSquareR;
+  font-size: 44px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: left;
+  color: #000000;
+}
+
+.schbutton{
+  width: 122px;
+  height: 122px;
+  margin: 0px 0px 8px 0;
+  padding: 34px 30px 34px 31px;
+  object-fit: contain;
+  background-color: #2c6c9b;
+	border: solid 2px #2c6c9b;
+
+}
+
+.ex{
+  width: 157px;
+  height: 67px;
+  margin: 90px 50px 32px 200px;
+  padding: 13px 20px 10px 28px;
+  object-fit: contain;
+  border-radius: 28.5px;
+  background-color: #5e7bc1;
+  float:right;
+}
+
+.exText{
+  width: 100px;
+  height: 67px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 28.5px;
+  line-height: 1.44;
+  letter-spacing: -1.38px;
+  text-align: center;
+  color: #f7f7f7;
+}
+
+.t1{
+  width: 960px;
+  height: 42px;
+  margin: 37px 0px 35px 0px;
+  object-fit: contain;
+  font-family: NanumSquareR;
+  font-size: 44px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: center;
+  color: #000000;	
+}
+
+.t2{
+  width: 960px;
+  height: 86px;
+  margin: 35px 0px 0px;
+  object-fit: contain;
+  font-family: NanumSquareR;
+  font-size: 34px;
+  line-height: 1.43;
+  letter-spacing: -1.8px;
+  text-align: center;
+  color: #b3b2b2;
+}
+
+.resultCss{
+  width: 76px;
+  height: 42px;
+  object-fit: contain;
+  font-family: NanumSquareB;
+  font-size: 44px;
+  line-height: 1.44;
+  letter-spacing: -2.2px;
+  text-align: center;
+  color: #464646;
+}
+
+.tTable{
+	width: 980px;
+	margin: 0px 0px 15px 0px;
+	padding: 43px 58px 48px 48px;
+	background-color: #f7f7f7;
+}
+
+.tdName{
+	width: 327px;
+	height: 141px;
+	object-fit: contain;
+	border: solid 2px #dddcdc;
+	
+}
+
+.tdResult{
+  width: 653px;
+  height: 141px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+  text-align:left;
+  padding-left:26px;
+}
+
+.td1{
+  width: 980px;
+  height: 141px;
+  object-fit: contain;
+  border: solid 2px #dddcdc;
+}
+
+#chkStyle{
+  width:50px;
+  height:50px;
+  float:left;
+  margin-left:50px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+#content{
+	width:980px;
+	height:705px;
+	margin-top:100px;	
+	overflow:auto;
+}
+
+#content_2{
+	width:980px;
+	height:987px;
+	margin-top:100px;	
+	overflow:auto;
+}
+
+#content_3{
+	width:980px;
+	height:870px;
+	margin-top:20px;	
+	overflow:auto;
+	border:1px;
+	border-color:black;
+}
+
+.searchImg{
+  width: 61px;
+  height: 54px;
+  object-fit: contain;
+}
+
+
+/* Style the tab */
+.tab {
+  overflow: auto;
+  background-color: #f3f5fa;
+  float:left;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	width: 327px;
+	height: 155px;
+	margin: 0px 0px 15px 0px;
+	padding: 43px 58px 48px 48px;
+	object-fit: contain;
+	border: solid 2px #dddcdc;
+	background-color: #f3f5fa;
+}
+
+/* Change background color of buttons on hover */
+/* .tab button:hover {
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+} */
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background: #2c6c9b;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+}
+
+.tab button.active #ff{
+	color: #f7f7f7;
+}
+
+/* Style the tab content */
+.tabcontent {
+  margin-left:50px;
+  margin-right:50px;
+}
+
+/* tab 끝 */
+
+#footer {
+    
+    bottom:0;
+    width:100%;
+    height:auto;   
+    
+}
+
+.swiper-container {
+	height:90%;
+	border:0px;;
+	
+	box-shadow:0 0 20px #ccc inset;
+}
+.swiper-slide {
+	text-align:center;
+	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center; /* 위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
+}
+.swiper-slide img {
+	box-shadow:0 0 5px #555;
+	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+}
+
+@media screen and (max-width: 700px) {
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 1024px) {
+
+}

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+		 <script
+			type="text/javascript"
+			src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f9c4521d57fa994"
+		></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+			crossorigin="anonymous"
+		/> 
+
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="ballStyle.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+		<!-- 끝 -->
+	</head>
+	<body>
+		<!-- 검색 js -->
+
+		<table>
+			<tr>
+				<td>
+					<div class="title_name">
+						꿈해몽 로또번호 생성기
+					</div>
+				</td>
+
+				<td>
+					<div class="ex">
+						<a href="#popup1">
+							<p class="exText">
+								도움말
+							</p>
+						</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<div id="popup1" class="overlay">
+			<div class="popup">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a class="swiper closs" href="#">&times;</a>
+							<img src="img/dreamImg.png" class="dreamImg" />
+						</div>
+						<div class="swiper-slide">
+							<a class="swiper closs" href="#">&times;</a>
+							<img src="img/dreamImg.png" class="dreamImg" />
+						</div>
+						<div class="swiper-slide">
+							<a class="swiper closs" href="#">&times;</a>
+							<img src="img/dreamImg.png" class="dreamImg" />
+						</div>
+						<div class="swiper-slide">
+							<a class="swiper closs" href="#">&times;</a>
+							<img src="img/dreamImg.png" class="dreamImg" />
+						</div>
+						<div class="swiper-slide">
+							<a class="swiper closs" href="#">&times;</a>
+							<img src="img/dreamImg.png" class="dreamImg" />
+						</div>
+						<div class="swiper-slide">
+							<a class="swiper closs" href="#">&times;</a>
+							<img src="img/dreamImg.png" class="dreamImg" />
+						</div>
+					</div>
+
+					<div class="swiper-button-next"></div>
+
+					<div class="swiper-button-prev"></div>
+
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab">
+			<table class="tabT">
+				<tr>
+					<td>
+						<button
+							class="tablinks"
+							onclick="openCity(event, 'Dream')"
+							id="defaultOpen"
+						>
+							<span id="ff">
+								꿈해몽
+							</span>
+						</button>
+					</td>
+					<td>
+						<button class="tablinks" onclick="openCity(event, 'Random')">
+							<span id="ff">
+								자동
+							</span>
+						</button>
+					</td>
+					<td>
+						<button class="tablinks" onclick="openCity(event, 'Ban')">
+							<span id="ff">
+								반자동
+							</span>
+						</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- 꿈해몽 시작 -->
+		<div id="Dream" class="tabcontent">
+			<table>
+				<tr>
+					<td>
+						<input
+							type="text"
+							id="text1"
+							class="search"
+							onkeyup="enterkey()"
+							placeholder="꿈의 핵심 단어를 입력하세요.(똥을 밟는 꿈 -> 똥)"
+							required
+						/>
+					</td>
+
+					<td>
+						<button class="schbutton" onclick="compareText()">
+							<img
+								src="img/search.png"
+								srcset="img/search2.png 2x, img/search3.png 3x"
+								class="searchImg"
+							/>
+						</button>
+					</td>
+				</tr>
+			</table>
+
+			<div>
+				<p class="t1">
+					꿈을 분석하여 로또번호를 찾아보세요.
+				</p>
+				<p class="t2">
+					콤마 ( , ) 로 여러 키워드 입력 가능 합니다.<br />
+					특수기호는 사용할 수 없습니다. 꿈 핵심 단어로 겁색해주세요.
+				</p>
+			</div>
+
+			<section id="content">
+				<table>
+					<div id="lottoNum" class="resultCss"></div>
+				</table>
+			</section>
+
+			<div id="footer">
+				<table>
+					<tr>
+						<td>
+							<button type="button" class="but1" id="btnGenerate_b">
+								<p class="text2">복사</p>
+							</button>
+						</td>
+
+						<td>
+							<button type="button" class="but2" id="btnGenerate_x">
+								<p class="text2">초기화</p>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- 꿈해몽 끝 -->
+
+		<!-- 자동 시작 -->
+		<div id="Random" class="tabcontent">
+			<section id="content_2">
+				<table>
+					<table class="tTable">
+						<tbody id="lottoNum_2" class="resultCss wrapper"></tbody>
+					</table>
+				</table>
+			</section>
+
+			<div id="footer">
+				<table>
+					<tr>
+						<td colspan="3">
+							<button type="button" class="but" onclick="generate()">
+								<p class="text2">번호생성</p>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="but_1" onclick="fn_userDel(1)">
+								<p class="text2">선택삭제</p>
+							</button>
+						</td>
+
+						<td>
+							<button type="button" class="but_2" id="btnCopy">
+								<p class="text2">복사하기</p>
+							</button>
+						</td>
+						<td>
+							<button type="button" class="but_3" onclick="display(3)">
+								<p class="text2">초기화</p>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- 자동 끝 -->
+
+		<!-- 반자동 시작 -->
+		<div id="Ban" class="tabcontent">
+			<table>
+				<tr>
+					<td>
+						<button id="sbot1" class="sbot1" onClick="popNum(4,0),s_Btn()">
+							<span class="sbotText">각번호대별</span>
+						</button>
+					</td>
+
+					<td>
+						<button id="sbot2" class="sbot2" onClick="popNum(2,2),s_Btn()">
+							<span class="sbotText">고정수</span>
+						</button>
+					</td>
+
+					<td>
+						<button id="sbot3" class="sbot3" onClick="popNum(2,1),s_Btn()">
+							<span class="sbotText">제외수</span>
+						</button>
+					</td>
+
+					<td>
+						<button id="sbot4" class="sbot4" onClick="popNum(1),reSet_sel(),s_Btn()">
+							<span class="sbotText">설정초기화</span>
+						</button>
+					</td>
+				</tr>
+			</table>
+			<section id="content_3">
+				<div id="pop1">
+					<table class="tTable">
+						<tbody id="lottoNum_3" class="resultCss wrapper"></tbody>
+					</table>
+				</div>
+				<div id="pop4">
+					<select name="items1" id="btnCot_0" class="btnCot">
+						<option value="0">01~09사이의 번호 갯수</option>
+						<option value="1">1개</option>
+						<option value="2">2개</option>
+						<option value="3">3개</option>
+						<option value="4">4개</option>
+						<option value="5">5개</option>
+						<option value="6">6개</option>
+					</select>
+
+					<select name="items1" id="btnCot_1" class="btnCot">
+						<option value="0">10~19사이의 번호 갯수</option>
+						<option value="1">1개</option>
+						<option value="2">2개</option>
+						<option value="3">3개</option>
+						<option value="4">4개</option>
+						<option value="5">5개</option>
+						<option value="6">6개</option>
+					</select>
+
+					<select name="items1" id="btnCot_2" class="btnCot">
+						<option value="0">20~29사이의 번호 갯수</option>
+						<option value="1">1개</option>
+						<option value="2">2개</option>
+						<option value="3">3개</option>
+						<option value="4">4개</option>
+						<option value="5">5개</option>
+						<option value="6">6개</option>
+					</select>
+
+					<select name="items1" id="btnCot_3" class="btnCot">
+						<option value="0">30~39사이의 번호 갯수</option>
+						<option value="1">1개</option>
+						<option value="2">2개</option>
+						<option value="3">3개</option>
+						<option value="4">4개</option>
+						<option value="5">5개</option>
+						<option value="6">6개</option>
+					</select>
+
+					<select name="items1" id="btnCot_4" class="btnCot">
+						<option value="0">40~45사이의 번호 갯수</option>
+						<option value="1">1개</option>
+						<option value="2">2개</option>
+						<option value="3">3개</option>
+						<option value="4">4개</option>
+						<option value="5">5개</option>
+						<option value="6">6개</option>
+					</select>
+				</div>
+				<div id="pop2">
+					<!-- <div id="numButton"></div> -->
+					<table class="tTable">
+						<tr>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-1.png"
+										id="ClickNum1"
+										class="numBtn"
+										onClick="handleClick(1)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-2.png"
+										id="ClickNum2"
+										class="numBtn"
+										onClick="handleClick(2)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-3.png"
+										id="ClickNum3"
+										class="numBtn"
+										onClick="handleClick(3)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-4.png"
+										id="ClickNum4"
+										class="numBtn"
+										onClick="handleClick(4)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-5.png"
+										id="ClickNum5"
+										class="numBtn"
+										onClick="handleClick(5)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-6.png"
+										id="ClickNum6"
+										class="numBtn"
+										onClick="handleClick(6)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-7.png"
+										id="ClickNum7"
+										class="numBtn"
+										onClick="handleClick(7)"
+									/>
+								</button>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-8.png"
+										id="ClickNum8"
+										class="numBtn"
+										onClick="handleClick(8)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-9.png"
+										id="ClickNum9"
+										class="numBtn"
+										onClick="handleClick(9)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-10.png"
+										id="ClickNum10"
+										class="numBtn"
+										onClick="handleClick(10)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-11.png"
+										id="ClickNum11"
+										class="numBtn"
+										onClick="handleClick(11)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-12.png"
+										id="ClickNum12"
+										class="numBtn"
+										onClick="handleClick(12)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-13.png"
+										id="ClickNum13"
+										class="numBtn"
+										onClick="handleClick(13)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-14.png"
+										id="ClickNum14"
+										class="numBtn"
+										onClick="handleClick(14)"
+									/>
+								</button>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-15.png"
+										id="ClickNum15"
+										class="numBtn"
+										onClick="handleClick(15)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-16.png"
+										id="ClickNum16"
+										class="numBtn"
+										onClick="handleClick(16)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-17.png"
+										id="ClickNum17"
+										class="numBtn"
+										onClick="handleClick(17)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-18.png"
+										id="ClickNum18"
+										class="numBtn"
+										onClick="handleClick(18)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-19.png"
+										id="ClickNum19"
+										class="numBtn"
+										onClick="handleClick(19)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-20.png"
+										id="ClickNum20"
+										class="numBtn"
+										onClick="handleClick(20)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-21.png"
+										id="ClickNum21"
+										class="numBtn"
+										onClick="handleClick(21)"
+									/>
+								</button>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-22.png"
+										id="ClickNum22"
+										class="numBtn"
+										onClick="handleClick(22)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-23.png"
+										id="ClickNum23"
+										class="numBtn"
+										onClick="handleClick(23)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-24.png"
+										id="ClickNum24"
+										class="numBtn"
+										onClick="handleClick(24)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-25.png"
+										id="ClickNum25"
+										class="numBtn"
+										onClick="handleClick(25)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-26.png"
+										id="ClickNum26"
+										class="numBtn"
+										onClick="handleClick(26)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-27.png"
+										id="ClickNum27"
+										class="numBtn"
+										onClick="handleClick(27)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-28.png"
+										id="ClickNum28"
+										class="numBtn"
+										onClick="handleClick(28)"
+									/>
+								</button>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-29.png"
+										id="ClickNum29"
+										class="numBtn"
+										onClick="handleClick(29)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-30.png"
+										id="ClickNum30"
+										class="numBtn"
+										onClick="handleClick(30)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-31.png"
+										id="ClickNum31"
+										class="numBtn"
+										onClick="handleClick(31)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-32.png"
+										id="ClickNum32"
+										class="numBtn"
+										onClick="handleClick(32)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-33.png"
+										id="ClickNum33"
+										class="numBtn"
+										onClick="handleClick(33)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-34.png"
+										id="ClickNum34"
+										class="numBtn"
+										onClick="handleClick(34)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-35.png"
+										id="ClickNum35"
+										class="numBtn"
+										onClick="handleClick(35)"
+									/>
+								</button>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-36.png"
+										id="ClickNum36"
+										class="numBtn"
+										onClick="handleClick(36)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-37.png"
+										id="ClickNum37"
+										class="numBtn"
+										onClick="handleClick(37)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-38.png"
+										id="ClickNum38"
+										class="numBtn"
+										onClick="handleClick(38)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-39.png"
+										id="ClickNum39"
+										class="numBtn"
+										onClick="handleClick(39)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-40.png"
+										id="ClickNum40"
+										class="numBtn"
+										onClick="handleClick(40)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-41.png"
+										id="ClickNum41"
+										class="numBtn"
+										onClick="handleClick(41)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-42.png"
+										id="ClickNum42"
+										class="numBtn"
+										onClick="handleClick(42)"
+									/>
+								</button>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-43.png"
+										id="ClickNum43"
+										class="numBtn"
+										onClick="handleClick(43)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-44.png"
+										id="ClickNum44"
+										class="numBtn"
+										onClick="handleClick(44)"
+									/>
+								</button>
+							</td>
+							<td>
+								<button class="numBtn_boder">
+									<img
+										src="img/num-45.png"
+										id="ClickNum45"
+										class="numBtn"
+										onClick="handleClick(45)"
+									/>
+								</button>
+							</td>
+							<td colspan="4">
+								<button class="s_Releace" onClick="s_Releace()">
+									<span>전체해제</span>
+								</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="pop3">제외수</div>
+			</section>
+
+			<div id="footer">
+				<table>
+					<tr>
+						<td colspan="3">
+							<button
+								type="button"
+								class="but"
+								onclick="popNum(1,4),s_Btn(),generate_Check()"
+							>
+								<p class="text2">번호생성</p>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button
+								type="button"
+								class="but_1"
+								onclick="popNum(1,4),s_Btn(),fn_userDel(2)"
+							>
+								<p class="text2">선택삭제</p>
+							</button>
+						</td>
+
+						<td>
+							<button
+								type="button"
+								class="but_2"
+								id="btnCopy_2"
+								onClick="popNum(1,4),s_Btn()"
+							>
+								<p class="text2">복사하기</p>
+							</button>
+						</td>
+						<td>
+							<button
+								type="button"
+								class="but_3"
+								onclick="popNum(1,4),s_Btn(),display(4)"
+							>
+								<p class="text2">초기화</p>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- 반자동 끝 -->
+
+		<script type="text/javascript" src="searchJS.js"></script>
+		<script type="text/javascript" src="NumberJS.js"></script>
+		<script type="text/javascript" src="numButtonJS.js"></script>
+		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+			function enterkey() {
+				if (window.event.keyCode == 13) {
+					// 엔터키가 눌렸을 때 실행할 내용
+
+					compareText();
+				}
+			}
+
+			function copyToClipboard(val) {
+				var t = document.createElement('textarea');
+
+				document.body.appendChild(t);
+				t.value = val;
+				t.select();
+				document.execCommand('copy');
+				document.body.removeChild(t);
+			}
+			$('#btnGenerate_b').click(function () {
+				if (strLength == 0) {
+					alert('복사할 내용이 없습니다.');
+				} else {
+					copyToClipboard(' * 로또 꿈 해몽 숫자 * \n' + copyResult.join('\n'));
+					alert('복사가 완료되었습니다.');
+				}
+			});
+
+			$('#btnGenerate_x').click(function () {
+				result = [];
+				result.push('복사할 내용이 없습니다.');
+				strLength = 0;
+				$('#lottoNum').html('');
+				document.getElementById('text1').value = null;
+			});
+		</script>
+
+		<script>
+			function openCity(evt, cityName) {
+				var i, tabcontent, tablinks;
+				tabcontent = document.getElementsByClassName('tabcontent');
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = 'none';
+				}
+				tablinks = document.getElementsByClassName('tablinks');
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(' active', '');
+				}
+				document.getElementById(cityName).style.display = 'block';
+				evt.currentTarget.className += ' active';
+			}
+
+			document.getElementById('defaultOpen').click();
+		</script>
+
+		<script>
+			$('#pop4').hide();
+			$('#pop3').hide();
+			$('#pop2').hide();
+			$('#pop1').show();
+			function popNum(num, B_num) {
+				BB = B_num;
+				if (num == 1) {
+					$('#pop4').hide();
+					$('#pop3').hide();
+					$('#pop2').hide();
+					$('#pop1').show();
+					console.log('a');
+				} else if (num == 2) {
+					$('#pop4').hide();
+					$('#pop3').hide();
+					$('#pop1').hide();
+					$('#pop2').show();
+
+					console.log(BB);
+				} else if (num == 3) {
+					$('#pop4').hide();
+					$('#pop2').hide();
+					$('#pop1').hide();
+					$('#pop3').show();
+					console.log('c');
+				} else {
+					$('#pop3').hide();
+					$('#pop2').hide();
+					$('#pop1').hide();
+					$('#pop4').show();
+					console.log('d');
+				}
+			}
+		</script>
+
+		<script>
+			new Swiper('.swiper-container', {
+				slidesPerView: 1, // 동시에 보여줄 슬라이드 갯수
+				spaceBetween: 0, // 슬라이드간 간격
+				slidesPerGroup: 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+
+				// 그룹수가 맞지 않을 경우 빈칸으로 메우기
+				// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+				loopFillGroupWithBlank: true,
+
+				loop: true, // 무한 반복
+
+				pagination: {
+					// 페이징
+					el: '.swiper-pagination',
+					clickable: true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+				},
+				navigation: {
+					// 네비게이션
+					nextEl: '.swiper-button-next', // 다음 버튼 클래스명
+					prevEl: '.swiper-button-prev', // 이번 버튼 클래스명
+				},
+			});
+		</script>
+	</body>
+</html>
