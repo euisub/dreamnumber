@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap:https://dreamnumber.netlify.app/sitemap.xml
