@@ -72,8 +72,8 @@
 				</td>
 
 				<td>
-					<div class="ex">
-						<a href="#popup1" onClick="adfucntion()">
+					<div class="ex" id="admob">
+						<a href="#popup1">
 							<p class="exText">
 								도움말
 							</p>
@@ -887,40 +887,43 @@
 		<script type="text/javascript" src="NumberJS.js"></script>
 		<script type="text/javascript" src="numButtonJS.js"></script>
 		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
 		<script>
-			function enterkey() {
-				if (window.event.keyCode == 13) {
-					// 엔터키가 눌렸을 때 실행할 내용
+		
 
-					compareText();
+				function enterkey() {
+					if (window.event.keyCode == 13) {
+						// 엔터키가 눌렸을 때 실행할 내용
+
+						compareText();
+					}
 				}
-			}
 
-			function copyToClipboard(val) {
-				var t = document.createElement('textarea');
+				function copyToClipboard(val) {
+					var t = document.createElement('textarea');
 
-				document.body.appendChild(t);
-				t.value = val;
-				t.select();
-				document.execCommand('copy');
-				document.body.removeChild(t);
-			}
-			$('#btnGenerate_b').click(function () {
-				if (strLength == 0) {
-					alert('복사할 내용이 없습니다.');
-				} else {
-					copyToClipboard(' * 로또 꿈 해몽 숫자 * \n' + copyResult.join('\n'));
-					alert('복사가 완료되었습니다.');
+					document.body.appendChild(t);
+					t.value = val;
+					t.select();
+					document.execCommand('copy');
+					document.body.removeChild(t);
 				}
-			});
+				$('#btnGenerate_b').click(function () {
+					if (strLength == 0) {
+						alert('복사할 내용이 없습니다.');
+					} else {
+						copyToClipboard(' * 로또 꿈 해몽 숫자 * \n' + copyResult.join('\n'));
+						alert('복사가 완료되었습니다.');
+					}
+				});
 
-			$('#btnGenerate_x').click(function () {
-				result = [];
-				result.push('복사할 내용이 없습니다.');
-				strLength = 0;
-				$('#lottoNum').html('');
-				document.getElementById('text1').value = null;
-			});
+				$('#btnGenerate_x').click(function () {
+					result = [];
+					result.push('복사할 내용이 없습니다.');
+					strLength = 0;
+					$('#lottoNum').html('');
+					document.getElementById('text1').value = null;
+				});
 		</script>
 
 		<script>
