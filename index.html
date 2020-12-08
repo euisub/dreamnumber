@@ -88,31 +88,31 @@
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<a class="swiper closs" href="#">&times;</a>
+							<a class="swiper closs" href="#" id="close">&times;</a>
 							<img src="img/explanation1.png" class="dreamImg" />
 						</div>
 						<div class="swiper-slide">
-							<a class="swiper closs" href="#">&times;</a>
+							<a class="swiper closs" href="#" id="close">&times;</a>
 							<img src="img/explanation2.png" class="dreamImg" />
 						</div>
 						<div class="swiper-slide">
-							<a class="swiper closs" href="#">&times;</a>
+							<a class="swiper closs" href="#" id="close">&times;</a>
 							<img src="img/explanation3.png" class="dreamImg" />
 						</div>
 						<div class="swiper-slide">
-							<a class="swiper closs" href="#">&times;</a>
+							<a class="swiper closs" href="#" id="close">&times;</a>
 							<img src="img/explanation4.png" class="dreamImg" />
 						</div>
 						<div class="swiper-slide">
-							<a class="swiper closs" href="#">&times;</a>
+							<a class="swiper closs" href="#" id="close">&times;</a>
 							<img src="img/explanation5.png" class="dreamImg" />
 						</div>
 						<div class="swiper-slide">
-							<a class="swiper closs" href="#">&times;</a>
+							<a class="swiper closs" href="#" id="close">&times;</a>
 							<img src="img/explanation6.png" class="dreamImg" />
 						</div>
 						<div class="swiper-slide">
-							<a class="swiper closs" href="#">&times;</a>
+							<a class="swiper closs" href="#" id="close">&times;</a>
 							<img src="img/explanation7.png" class="dreamImg" />
 						</div>
 					</div>
@@ -889,41 +889,56 @@
 		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
 		<script>
-		
+			let winValue = 0;
+			document.getElementById('admob').onclick = function () {
+				
+				winValue = 1;
+				console.log(winValue);
+				window.postMessage(winValue, '*');
+			};
+			
+			document.getElementById('close').onclick = function () {
+				
+				winValue = 0;
+				console.log(winValue);
+				window.postMessage(winValue, '*');
+			};
+		</script>
 
-				function enterkey() {
-					if (window.event.keyCode == 13) {
-						// 엔터키가 눌렸을 때 실행할 내용
+		<script>
+			function enterkey() {
+				if (window.event.keyCode == 13) {
+					// 엔터키가 눌렸을 때 실행할 내용
 
-						compareText();
-					}
+					compareText();
 				}
+			}
 
-				function copyToClipboard(val) {
-					var t = document.createElement('textarea');
+			function copyToClipboard(val) {
+				var t = document.createElement('textarea');
 
-					document.body.appendChild(t);
-					t.value = val;
-					t.select();
-					document.execCommand('copy');
-					document.body.removeChild(t);
+				document.body.appendChild(t);
+				t.value = val;
+				t.select();
+				document.execCommand('copy');
+				document.body.removeChild(t);
+			}
+			$('#btnGenerate_b').click(function () {
+				if (strLength == 0) {
+					alert('복사할 내용이 없습니다.');
+				} else {
+					copyToClipboard(' * 로또 꿈 해몽 숫자 * \n' + copyResult.join('\n'));
+					alert('복사가 완료되었습니다.');
 				}
-				$('#btnGenerate_b').click(function () {
-					if (strLength == 0) {
-						alert('복사할 내용이 없습니다.');
-					} else {
-						copyToClipboard(' * 로또 꿈 해몽 숫자 * \n' + copyResult.join('\n'));
-						alert('복사가 완료되었습니다.');
-					}
-				});
+			});
 
-				$('#btnGenerate_x').click(function () {
-					result = [];
-					result.push('복사할 내용이 없습니다.');
-					strLength = 0;
-					$('#lottoNum').html('');
-					document.getElementById('text1').value = null;
-				});
+			$('#btnGenerate_x').click(function () {
+				result = [];
+				result.push('복사할 내용이 없습니다.');
+				strLength = 0;
+				$('#lottoNum').html('');
+				document.getElementById('text1').value = null;
+			});
 		</script>
 
 		<script>
