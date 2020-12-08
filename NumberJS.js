@@ -41,13 +41,12 @@ function generate() {
 //반자동
 
 function generate_Check() {
-	BB=4;
+	BB = 4;
 	var selNum1 = Number($('#btnCot_0 option:selected').val());
 	var selNum2 = Number($('#btnCot_1 option:selected').val());
 	var selNum3 = Number($('#btnCot_2 option:selected').val());
 	var selNum4 = Number($('#btnCot_3 option:selected').val());
 	var selNum5 = Number($('#btnCot_4 option:selected').val());
-	
 
 	var selTotal = selNum1 + selNum2 + selNum3 + selNum4 + selNum5;
 
@@ -147,35 +146,35 @@ function generate_Check() {
 			(selNum1 != 0 && selNum1 < y_count_0.length) ||
 			(selNum1 != 0 && selNum1 > 6 - no_to_1)
 		) {
-			// alert('Error: 1~9 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요. ');
+			alert('Error: 1~9 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요. ');
 			result = 1;
 		} else if (
 			(selNum2 != 0 && selNum2 > 10 - Number(r_count_1.length)) ||
 			(selNum2 != 0 && selNum2 < y_count_1.length) ||
 			(selNum2 != 0 && selNum2 > 6 - no_to_2)
 		) {
-			// alert('Error: 10~19 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요.');
+			alert('Error: 10~19 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요.');
 			result = 1;
 		} else if (
 			(selNum3 != 0 && selNum3 > 10 - Number(r_count_2.length)) ||
 			(selNum3 != 0 && selNum3 < y_count_2.length) ||
 			(selNum3 != 0 && selNum3 > 6 - no_to_3)
 		) {
-			// alert('Error: 20~29 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요.');
+			alert('Error: 20~29 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요.');
 			result = 1;
 		} else if (
 			(selNum4 != 0 && selNum4 > 10 - Number(r_count_3.length)) ||
 			(selNum4 != 0 && selNum4 < y_count_3.length) ||
 			(selNum4 != 0 && selNum4 > 6 - no_to_4)
 		) {
-			// alert('Error: 30~39 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요.');
+			alert('Error: 30~39 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요.');
 			result = 1;
 		} else if (
 			(selNum5 != 0 && selNum5 > 6 - Number(r_count_4.length)) ||
 			(selNum5 != 0 && selNum5 < y_count_4.length) ||
 			(selNum5 != 0 && selNum5 > 6 - no_to_5)
 		) {
-			// alert('Error: 40~45 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요.');
+			alert('Error: 40~45 선택갯수와 빨강(제외) or 노랑(포함) 갯수를 확인하세요.');
 			result = 1;
 		}
 
@@ -218,6 +217,7 @@ function generate_Check() {
 }
 
 function generate_2(a, b, c, d, e, t) {
+	console.log(a, b, c, d, e, t);
 	var numArr = new Array();
 
 	for (i = 0; i < 45; i++) {
@@ -272,7 +272,7 @@ function generate_2(a, b, c, d, e, t) {
 	var lend_4 = new Array();
 	var lend_5 = new Array();
 
-	if (a != 0 || b != 0 || c != 0 || d != 0 || e != 0) {
+	if (t != 0) {
 		for (i = 0; i < numArr.length; i++) {
 			if (Math.floor(numArr[i] / 10) == 0) {
 				num_set1.push(numArr[i]);
@@ -288,6 +288,7 @@ function generate_2(a, b, c, d, e, t) {
 		}
 
 		if (a != numResult1.length) {
+			console.log('222' + numResult1.length);
 			var num_plus = new Array();
 			var coCot = a - Number(numResult1.length);
 
@@ -309,9 +310,24 @@ function generate_2(a, b, c, d, e, t) {
 					numArr.splice(search, 1);
 				}
 			}
-			lend_1 = num_plus;
+			lend_1 = numResult1.concat(num_plus);
 		} else if (a == numResult1.length) {
-			lend_1 = [];
+			// for(i=0;i<numResult1.length;i++){
+			// 	var search = num_set1.indexOf(numResult1[i]);
+			// 	if (search != -1) {
+			// 		num_set1.splice(search, 1);
+			// 	}
+			// }
+			if (a != 0) {
+				for (i = 0; i < num_set1.length; i++) {
+					var search = numArr.indexOf(num_set1[i]);
+					if (search != -1) {
+						numArr.splice(search, 1);
+					}
+				}
+			}
+			lend_1 = numResult1;
+			console.log('aaa=' + lend_1);
 		}
 
 		if (b != numResult2.length) {
@@ -334,9 +350,18 @@ function generate_2(a, b, c, d, e, t) {
 					numArr.splice(search, 1);
 				}
 			}
-			lend_2 = num_plus;
+			lend_2 = numResult2.concat(num_plus);
 		} else if (b == numResult2.length) {
-			lend_2 = [];
+			if (b != 0) {
+				for (i = 0; i < num_set2.length; i++) {
+					var search = numArr.indexOf(num_set2[i]);
+					if (search != -1) {
+						numArr.splice(search, 1);
+					}
+				}
+			}
+
+			lend_2 = numResult2;
 		}
 
 		if (c != numResult3.length) {
@@ -359,9 +384,18 @@ function generate_2(a, b, c, d, e, t) {
 					numArr.splice(search, 1);
 				}
 			}
-			lend_3 = num_plus;
+			lend_3 = numResult3.concat(num_plus);
 		} else if (c == numResult3.length) {
-			lend_3 = [];
+			if (c != 0) {
+				for (i = 0; i < num_set3.length; i++) {
+					var search = numArr.indexOf(num_set3[i]);
+					if (search != -1) {
+						numArr.splice(search, 1);
+					}
+				}
+			}
+
+			lend_3 = numResult3;
 		}
 
 		if (d != numResult4.length) {
@@ -384,9 +418,18 @@ function generate_2(a, b, c, d, e, t) {
 					numArr.splice(search, 1);
 				}
 			}
-			lend_4 = num_plus;
+			lend_4 = numResult4.concat(num_plus);
 		} else if (d == numResult4.length) {
-			lend_4 = [];
+			if (d != 0) {
+				for (i = 0; i < num_set4.length; i++) {
+					var search = numArr.indexOf(num_set4[i]);
+					if (search != -1) {
+						numArr.splice(search, 1);
+					}
+				}
+			}
+
+			lend_4 = numResult4;
 		}
 
 		if (e != numResult5.length) {
@@ -409,13 +452,29 @@ function generate_2(a, b, c, d, e, t) {
 					numArr.splice(search, 1);
 				}
 			}
-			lend_5 = num_plus;
+			lend_5 = numResult5.concat(num_plus);
 		} else if (e == numResult5.length) {
-			lend_5 = [];
+			if (e != 0) {
+				for (i = 0; i < num_set5.length; i++) {
+					var search = numArr.indexOf(num_set5[i]);
+					if (search != -1) {
+						numArr.splice(search, 1);
+					}
+				}
+			}
+
+			lend_5 = numResult5;
 		}
 	}
-
-	var lend_to = yellowArr.concat(lend_1, lend_2, lend_3, lend_4, lend_5);
+	let lend_pp = [];
+	var lend_to = lend_pp.concat(lend_1, lend_2, lend_3, lend_4, lend_5);
+	console.log(lend_to);
+	for (i = 0; i < lend_to.length; i++) {
+		var search = numArr.indexOf(lend_to[i]);
+		if (search != -1) {
+			numArr.splice(search, 1);
+		}
+	}
 
 	if (6 - Number(lend_to.length) != 0) {
 		for (i = 0; i < 6 - Number(lend_to.length); i++) {
@@ -436,6 +495,7 @@ function generate_2(a, b, c, d, e, t) {
 	}
 
 	arrayOfNumbers = arrayOfNumbers.concat(lend_to);
+	console.log('최종=' + arrayOfNumbers);
 
 	arrayOfCombinations_2.push(
 		arrayOfNumbers.sort(function (a, b) {
@@ -614,7 +674,7 @@ function fn_userDel(f_num) {
 			return;
 		} else {
 			for (i = 0; i < arr.length; i++) {
-				ret = '.' + arr[i]+'_2';
+				ret = '.' + arr[i] + '_2';
 
 				$(ret).closest('tr').remove();
 				dupliChange_2.push(arrayOfCombinations_2[arr[i]]);
@@ -634,46 +694,43 @@ function copyToClipboardRandom(val) {
 	document.body.removeChild(t);
 }
 $('#btnCopy').click(function () {
-	if (dupliChange.length != 0 || arrayOfCombinations.length !=0) {
+	if (dupliChange.length != 0 || arrayOfCombinations.length != 0) {
 		for (i = 0; i < dupliChange.length; i++) {
 			var search = arrayOfCombinations.indexOf(dupliChange[i]);
 			if (search != -1) {
 				arrayOfCombinations.splice(search, 1);
 			}
 		}
-		
-		if(arrayOfCombinations.length ==0){
+
+		if (arrayOfCombinations.length == 0) {
 			alert('복사할 내용이 없습니다.');
-		}else{
-		copyToClipboardRandom(' * 로또생성번호 * \n' + arrayOfCombinations.join('\n'));
-		alert('복사가 완료되었습니다.');	
+		} else {
+			copyToClipboardRandom(' * 로또생성번호 * \n' + arrayOfCombinations.join('\n'));
+			alert('복사가 완료되었습니다.');
 		}
-		
-	}  else{
+	} else {
 		alert('복사할 내용이 없습니다.');
 	}
 
 	for (j = 0; j < duplication.length; j++) {
 		arrayOfCombinations[j] = duplication[j];
 	}
-	
 });
 $('#btnCopy_2').click(function () {
-	if (dupliChange_2.length != 0 || arrayOfCombinations_2.length !=0 ) {
+	if (dupliChange_2.length != 0 || arrayOfCombinations_2.length != 0) {
 		for (i = 0; i < dupliChange_2.length; i++) {
 			var search = arrayOfCombinations_2.indexOf(dupliChange_2[i]);
 			if (search != -1) {
 				arrayOfCombinations_2.splice(search, 1);
 			}
 		}
-		
-		if(arrayOfCombinations_2.length ==0){
+
+		if (arrayOfCombinations_2.length == 0) {
 			alert('복사할 내용이 없습니다.');
-		}else{
+		} else {
 			copyToClipboardRandom(' * 로또생성번호 * \n' + arrayOfCombinations_2.join('\n'));
 			alert('복사가 완료되었습니다.');
 		}
-		
 	} else {
 		alert('복사할 내용이 없습니다.');
 	}

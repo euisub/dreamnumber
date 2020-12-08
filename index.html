@@ -889,23 +889,6 @@
 		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
 		<script>
-			let winValue = 0;
-			document.getElementById('admob').onclick = function () {
-				
-				winValue = 1;
-				console.log(winValue);
-				window.postMessage(winValue, '*');
-			};
-			
-			document.getElementById('close').onclick = function () {
-				
-				winValue = 0;
-				console.log(winValue);
-				window.postMessage(winValue, '*');
-			};
-		</script>
-
-		<script>
 			function enterkey() {
 				if (window.event.keyCode == 13) {
 					// 엔터키가 눌렸을 때 실행할 내용
