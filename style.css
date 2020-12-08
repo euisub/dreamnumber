@@ -615,21 +615,21 @@ input::placeholder {
 
 #content{
 	width:980px;
-	height:705px;
+	height:755px;
 	margin-top:100px;	
 	overflow:auto;
 }
 
 #content_2{
 	width:980px;
-	height:987px;
+	height:1037px;
 	margin-top:100px;	
 	overflow:auto;
 }
 
 #content_3{
 	width:980px;
-	height:870px;
+	height:920px;
 	margin-top:20px;	
 	overflow:auto;
 	border:1px;
