@@ -113,7 +113,7 @@ h1 {
 }
 .title_name {
   width: 500px;
-  margin: 79px 120px 32px 49px;
+  margin: 20px 120px 32px 49px;
   object-fit: contain;
   font-family: NanumSquareB;
   font-size: 48.5px;
@@ -515,7 +515,7 @@ input::placeholder {
 .ex{
   width: 157px;
   height: 67px;
-  margin: 90px 50px 32px 200px;
+  margin: 20px 50px 32px 200px;
   padding: 13px 20px 10px 28px;
   object-fit: contain;
   border-radius: 28.5px;
