@@ -465,9 +465,14 @@ function generate_2(a, b, c, d, e, t) {
 
 			lend_5 = numResult5;
 		}
+		
+		let lend_pp = [];
+		var lend_to = lend_pp.concat(lend_1, lend_2, lend_3, lend_4, lend_5);
+		
+	}else{
+		var lend_to = yellowArr;
 	}
-	let lend_pp = [];
-	var lend_to = lend_pp.concat(lend_1, lend_2, lend_3, lend_4, lend_5);
+	
 	console.log(lend_to);
 	for (i = 0; i < lend_to.length; i++) {
 		var search = numArr.indexOf(lend_to[i]);
