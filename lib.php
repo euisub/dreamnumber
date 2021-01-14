@@ -1,7 +1,10 @@
 <?php
+
+  header('Content-Type: text/html; charset=utf-8');
   $client_id = "YZt59p0BkWpwhZwMnwR_";
   $client_secret = "QFaGjwpsLQ";
   $encText = urlencode("네이버오픈API");
+
   $url = "https://openapi.naver.com/v1/search/blog.xml?query=abc"; // json 결과
 //  $url = "https://openapi.naver.com/v1/search/blog.xml?query=".$encText; // xml 결과
   $is_post = false;
