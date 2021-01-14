@@ -2,11 +2,10 @@
 <html lang="ko">
 	<head>
 		<title>블로그 글 랭킹확인</title>
-		<meta charset="EUC-kr" />
-		<meta http-equiv="Content-Type" content="text/html; charset=EUC-kr" />
-		
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="jquery.min.js"></script>
 		<link rel="stylesheet" href="p-style.css" />
 
 		<!-- 구글 서치콘솔 메타소스 -->
@@ -119,59 +118,59 @@
 		var tt = true;
 		var totalNum = 0;
 
-		// while (tt) {
-		// 	if (start > 1000) {
-		// 		$('#num').html(
-		// 			`<span class="result-color">1000</span> 위 안에 포함되어 있지 않습니다. 노출이 안됐을 수 있으니 확인해보세요.`
-		// 		);
-		// 		$('#total').html(
-		// 			`키워드 <span class="result-color">${SEARVALUE}</span>의 총 문서수 = ${totalNum}개 입니다.`
-		// 		);
-		// 		// searchDisplay('block');
-		// 		tt = false;
-		// 		return false;
-		// 	}
+		while (tt) {
+			if (start > 1000) {
+				$('#num').html(
+					`<span class="result-color">1000</span> 위 안에 포함되어 있지 않습니다. 노출이 안됐을 수 있으니 확인해보세요.`
+				);
+				$('#total').html(
+					`키워드 <span class="result-color">${SEARVALUE}</span>의 총 문서수 = ${totalNum}개 입니다.`
+				);
+				// searchDisplay('block');
+				tt = false;
+				return false;
+			}
 			$.ajax({
 				type: 'POST',
-				dataType: 'json',
+				dataType: 'jsonp',
 				url: '/lib.php',
 				data: { SEARVALUE: SEARVALUE, START: start },
 				cache: false,
 				async: false,
 			}).done(function (result) {
-				// var titleArray = [];
-				// var nameArray = [];
-				// var num = 0;
-				// totalNum = result.total;
-				// totalNum = totalNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+				var titleArray = [];
+				var nameArray = [];
+				var num = 0;
+				totalNum = result.total;
+				totalNum = totalNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-				// for (i = 0; i < result.items.length; i++) {
-				// 	let title = result.items[i].title;
-				// 	let name = result.items[i].bloggername;
-				// 	let titleReplace = title.toLowerCase().replace(/(<([^>]+)>)/gi, '');
-				// 	name = name.toLowerCase();
-				// 	titleArray.push(titleReplace.replace(/ /g, ''));
-				// 	nameArray.push(name.replace(/ /g, ''));
-				// 	num++;
-				// }
-				// for (i = 0; i < num; i++) {
-				// 	index++;
-				// 	//    console.log(`name => ${blogName} = ${nameArray[i]}`);
-				// 	//        console.log(`title => ${blogTitle} = ${titleArray[i]}`);
-				// 	if (blogName === nameArray[i] && blogTitle === titleArray[i]) {
-				// 		$('#num').html(`<span class="result-color">${index} </span>등 입니다.`);
-				// 		$('#total').html(
-				// 			`키워드 <span class="result-color">${SEARVALUE}</span>의 총 문서수 = ${totalNum}개 입니다.`
-				// 		);
-				// 		// searchDisplay('block');
-				// 		tt = false;
-				// 	}
-				// }
+				for (i = 0; i < result.items.length; i++) {
+					let title = result.items[i].title;
+					let name = result.items[i].bloggername;
+					let titleReplace = title.toLowerCase().replace(/(<([^>]+)>)/gi, '');
+					name = name.toLowerCase();
+					titleArray.push(titleReplace.replace(/ /g, ''));
+					nameArray.push(name.replace(/ /g, ''));
+					num++;
+				}
+				for (i = 0; i < num; i++) {
+					index++;
+					//    console.log(`name => ${blogName} = ${nameArray[i]}`);
+					//        console.log(`title => ${blogTitle} = ${titleArray[i]}`);
+					if (blogName === nameArray[i] && blogTitle === titleArray[i]) {
+						$('#num').html(`<span class="result-color">${index} </span>등 입니다.`);
+						$('#total').html(
+							`키워드 <span class="result-color">${SEARVALUE}</span>의 총 문서수 = ${totalNum}개 입니다.`
+						);
+						// searchDisplay('block');
+						tt = false;
+					}
+				}
 
-				// if (tt) {
-				// 	start += 100;
-				// }
+				if (tt) {
+					start += 100;
+				}
 			});
-		// }
+		}
 	}
 </script>
