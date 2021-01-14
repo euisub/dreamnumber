@@ -6,7 +6,7 @@
  
   $START= $_POST["START"];
 
-  $url = "https://openapi.naver.com/v1/search/blog.json?query=".$encText."&display=100&start=".$START; // json 결과
+  $url = "https://openapi.naver.com/v1/search/blog.json?query="+$encText+"&display=100&start="+$START; // json 결과
 
   $is_post = false;
   $ch = curl_init();
