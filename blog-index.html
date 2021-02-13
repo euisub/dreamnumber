@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>블로그 글 랭킹확인</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="p-style.css" />
+
+		<!-- 구글 서치콘솔 메타소스 -->
+		<meta
+			name="google-site-verification"
+			content="07JvWmYRgJ4UuX5YO7gn7MLj6bK2zIUb9cGmtVLPkQY"
+		/>
+		<!-- 네이버 메타소스 -->
+		<meta name="naver-site-verification" content="e0181191039958adb5546c51ab53d3db0cb11b1e" />
+
+		<!-- 네이버 최적화 -->
+		<title>블로그 글 랭킹확인</title>
+		<link rel="canonical" href="http://lottolotto.shop/" />
+		<meta name="description" content="블로그 글 순위를 확인해 볼 수 있습니다." />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="블로그 글 랭킹확인" />
+		<meta
+			property="og:description"
+			content="블로그 글 순위를 확인해 볼 수 있습니다."
+		/>
+		<meta property="og:image" content="img/gimg.png" />
+		<meta property="og:url" content="http://lottolotto.shop/" />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="블로그 글 랭킹확인" />
+		<meta
+			name="twitter:description"
+			content="블로그 글 순위를 확인해 볼 수 있습니다."
+		/>
+		<meta name="twitter:image" content="http://lottolotto.shop/" />
+		<meta name="twitter:domain" content="블로그 글 랭킹확인" />
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">내 블로그 글은 몇등일까?</h1>
+
+			<input
+				type="text"
+				id="input-text"
+				class="blogname"
+				placeholder="블로그 명을 입력해주세요."
+			/>
+
+			<input
+				type="text"
+				id="input-text"
+				class="blog-title"
+				placeholder="글 제목을 입력해주세요."
+			/>
+
+			<input
+				type="text"
+				id="input-text"
+				class="keyword"
+				name="query"
+				placeholder="키워드를 입력해주세요."
+			/>
+
+			<div class="content-result">
+				<p class="result-text" id="num"></p>
+				<p class="document-num" id="total"></p>
+			</div>
+			<!-- <div class="content-loding" id="loding">
+    <div class="loging2">
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+            <div class="load"></div>
+        </div>
+    </div>   -->
+
+			<button class="search-button" id="search" onclick="goSearch()">검색</button>
+			<p>검색 누른 후 5초 정도 기다려주세요.</p>
+		</div>
+	</body>
+</html>
+
+<script>
+	function goSearch() {
+		var SEARVALUE = $('.keyword').val();
+		var blogName = $('.blogname').val();
+		var blogTitle = $('.blog-title').val();
+		if (!blogName) {
+			alert('블로그 명을 입력해주세요.');
+			return false;
+		} else if (!blogTitle) {
+			alert('글 제목을 입력해주세요.');
+			return false;
+		} else if (!SEARVALUE) {
+			alert('키워드를 입력해주세요.');
+			return false;
+		}
+		if (SEARVALUE) {
+			ajaxWhile();
+
+			//블로그 끝
+		}
+	}
+
+	function ajaxWhile() {
+		var SEARVALUE = $('.keyword').val();
+		var blogName = $('.blogname').val().replace(/ /g, '');
+		var blogTitle = $('.blog-title').val().replace(/ /g, '');
+		blogName = blogName.toLowerCase();
+		blogTitle = blogTitle.toLowerCase();
+		var start = 1;
+		var index = 0;
+		var tt = true;
+		var totalNum = 0;
+
+		// while (tt) {
+			// if (start > 1000) {
+			// 	$('#num').html(
+			// 		`<span class="result-color">1000</span> 위 안에 포함되어 있지 않습니다. 노출이 안됐을 수 있으니 확인해보세요.`
+			// 	);
+			// 	$('#total').html(
+			// 		`키워드 <span class="result-color">${SEARVALUE}</span>의 총 문서수 = ${totalNum}개 입니다.`
+			// 	);
+			// 	// searchDisplay('block');
+			// 	tt = false;
+			// 	return false;
+			// }
+			$.ajax({
+				type: 'POST',
+				dataType: 'json',
+				url: '/lib.php',
+				data: { SEARVALUE: SEARVALUE, START: start },
+				cache: false,
+				async: false,
+			}).done(function (result) {
+				// var titleArray = [];
+				// var nameArray = [];
+				// var num = 0;
+				// totalNum = result.total;
+				// totalNum = totalNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+				// for (i = 0; i < result.items.length; i++) {
+				// 	let title = result.items[i].title;
+				// 	let name = result.items[i].bloggername;
+				// 	let titleReplace = title.toLowerCase().replace(/(<([^>]+)>)/gi, '');
+				// 	name = name.toLowerCase();
+				// 	titleArray.push(titleReplace.replace(/ /g, ''));
+				// 	nameArray.push(name.replace(/ /g, ''));
+				// 	num++;
+				// }
+				// for (i = 0; i < num; i++) {
+				// 	index++;
+				// 	//    console.log(`name => ${blogName} = ${nameArray[i]}`);
+				// 	//        console.log(`title => ${blogTitle} = ${titleArray[i]}`);
+				// 	if (blogName === nameArray[i] && blogTitle === titleArray[i]) {
+				// 		$('#num').html(`<span class="result-color">${index} </span>등 입니다.`);
+				// 		$('#total').html(
+				// 			`키워드 <span class="result-color">${SEARVALUE}</span>의 총 문서수 = ${totalNum}개 입니다.`
+				// 		);
+				// 		// searchDisplay('block');
+				// 		tt = false;
+				// 	}
+				// }
+
+				// if (tt) {
+				// 	start += 100;
+				// }
+			});
+		// }
+	}
+</script>
