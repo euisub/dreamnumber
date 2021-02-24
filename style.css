@@ -655,7 +655,7 @@ input::placeholder {
 	width: 50px;
 	height: 50px;
 	float: left;
-	margin-left: 50px;
+	/* margin-left: 50px; */
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -769,7 +769,7 @@ input::placeholder {
 @media (min-width: 768px) {
 
 } */
-@media (min-width: 768px) {
+@media screen and (min-width: 1080px) {
 	* {
 		margin: 0;
 		padding: 0;
