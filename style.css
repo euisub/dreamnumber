@@ -695,8 +695,8 @@ input::placeholder {
 	overflow: auto;
 	background-color: #f3f5fa;
 	float: left;
-	margin-left: 50px;
-	margin-right: 50px;
+	/* margin-left: 50px;
+	margin-right: 50px; */
 }
 
 /* Style the buttons inside the tab */
