@@ -166,7 +166,7 @@ h1 {
 }
 .title_name {
 	width: 500px;
-	margin: 20px 120px 32px 49px;
+	margin: 20px 120px 32px 0px;
 	object-fit: contain;
 	font-family: NanumSquareB;
 	font-size: 48.5px;
