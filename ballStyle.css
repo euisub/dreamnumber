@@ -504,7 +504,7 @@ table[class*="tbl_form"] tr th .req span {text-indent:-999em; position:absolute;
 
 /* 645 ball */
 .ball_645 {display:inline-block; border-radius:100%; text-align:center; vertical-align:middle; color:#fff; font-weight:500;/* text-shadow: 0px 0px 2px rgba(0, 0, 0, 1); */}
-.ball_645.lrg {width:45px; height:45px; line-height:45px; font-size:25px; text-align:center;}
+.ball_645.lrg {width:80px; height:80px; line-height:75px; font-size:40px; text-align:center;}
 .ball_645.sml {width:24px; height:24px; line-height:22px; font-size:13px}
 .ball_645.not {color:#777}
 .ball_645.sml.not {font-weight:300}
@@ -563,3 +563,10 @@ table tr td .ball_645.sml {margin:0 3px}
 .tbl_total_account_number_top tr th {padding:4px 0 4px; text-align:left; vertical-align:top; font-weight:normal; line-height:1.3em;}
 .tbl_total_account_number_top tr td {padding:5px 0; font-weight:300; color:#767676;}
 .tbl_total_account_number_top tr td .brk ~ .brk {margin-top:5px}
+
+
+
+@media screen and (min-width: 1080px) {
+	
+	.ball_645.lrg {width:45px; height:45px; line-height:45px; font-size:25px; text-align:center;}
+}
