@@ -20,6 +20,12 @@ ul {
 	padding: 0;
 }
 
+.img-border{
+	border: 5px solid blueviolet;
+	border-radius: 5px;
+	
+}
+
 .logo-text {
 	font-size: 2rem;
 	padding: 1em;
@@ -764,10 +770,16 @@ input::placeholder {
 .kakao- {
 	
 	width:100%;
+	height: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 20px;
+}
+
+.kakao- p{
+	color:black;
 	margin-top: 20px;
 }
 
